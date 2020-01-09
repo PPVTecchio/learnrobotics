@@ -1,0 +1,61 @@
+Wheel at center:
+Mass:
+0.02705420 kg
+Volume:
+0.00002572 m3
+Surface area:
+0.01231321 m2
+Center of mass:
+X: 0.00000000 m
+Y: 0.00000000 m
+Z: 0.00000000 m
+Moments of inertia: kg m2
+Lxx: 1.09514547e-5	Lxy: 3.12490491e-11	Lxz: -3.65575263e-12
+Lyx: 3.12490491e-11	Lyy: 2.13765927e-5	Lyz: -4.36767705e-11
+Lzx: -3.65575263e-12	Lzy: -4.36767705e-11	Lzz: 1.09513089e-5
+
+Sphere at center:
+Mass:
+0.00439458 kg
+Volume:
+0.00000418 m3
+Surface area:
+0.00125492 m2
+Center of mass:
+X: -0.00000000 m
+Y: -0.00000000 m
+Z: -0.00000000 m
+Moments of inertia: kg m2
+Lxx: 1.75495855e-7	Lxy: 7.17444448e-16	Lxz: 0.00000000e+0
+Lyx: 7.17444448e-16	Lyy: 1.75495862e-7	Lyz: 0.00000000e+0
+Lzx: 0.00000000e+0	Lzy: 0.00000000e+0	Lzz: 1.75398549e-7
+
+Robot chassis at center:
+Mass:
+0.32697605 kg
+Volume:
+0.00031081 m3
+Surface area:
+0.18952574 m2
+Center of mass:
+X: -0.00000000 m
+Y: -0.00000000 m
+Z: 0.00000000 m
+Moments of inertia: kg m2
+Lxx: 6.63318913e-4	Lxy: -3.48319725e-7	Lxz: 5.13108151e-5
+Lyx: -3.48319725e-7	Lyy: 1.02936619e-3	Lyz: 8.02098638e-7
+Lzx: 5.13108151e-5	Lzy: 8.02098638e-7	Lzz: 1.20173687e-3
+
+
+Position of wheel from center:
+X: -0.05762664 m
+Y: -0.06151239 m
+Z: -0.03470413 m
+
+Robot width: 0.101 m
+Wheel to base: 0.0025 m
+
+Position of sphere from center:
+X: 0.02826274 m
+Y: 0.00014962 m
+Z: -0.06413199 m
