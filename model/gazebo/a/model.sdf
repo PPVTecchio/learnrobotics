@@ -1,26 +1,26 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='learnbotics'>
-    <link name='chassis'>
+  <model name='learnbotics_a'>
+    <link name='link_0'>
       <inertial>
-        <mass>0.32697605</mass>
+        <mass>0.326976</mass>
         <inertia>
-          <ixx>6.63318913e-04</ixx>
+          <ixx>0.00063319</ixx>
           <ixy>0</ixy>
-          <ixz>5.13108151e-05</ixz>
-          <iyy>1.02936619e-03</iyy>
-          <iyz>8.02098638e-07</iyz>
-          <izz>1.20173687e-03</izz>
+          <ixz>5.131e-05</ixz>
+          <iyy>0.00102937</iyy>
+          <iyz>8e-07</iyz>
+          <izz>0.00120174</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>0 0 0 0 0 0</pose>
+      <pose frame=''>0.021748 -3.7e-05 0.033385 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/complete_robot.stl</uri>
@@ -101,26 +101,26 @@
         </surface>
       </collision>
     </link>
-    <link name='sphere'>
+    <link name='link_1'>
       <inertial>
         <mass>0.00439458</mass>
         <inertia>
-          <ixx>1.75495855e-07</ixx>
-          <ixy>7.17444448e-16</ixy>
+          <ixx>1.8e-07</ixx>
+          <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1.75495862e-07</iyy>
+          <iyy>1.8e-07</iyy>
           <iyz>0</iyz>
-          <izz>1.75398549e-07</izz>
+          <izz>1.8e-07</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>0.02826274 0.00014962 -0.06413199 0 0 0</pose>
+      <pose frame=''>0.050011 0.000113 -0.030747 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl</uri>
@@ -201,20 +201,20 @@
         </surface>
       </collision>
     </link>
-    <link name='wheel_1'>
+    <link name='link_2'>
       <inertial>
-        <mass>0.02705420</mass>
+        <mass>0.0270542</mass>
         <inertia>
-          <ixx>1.09514547e-05</ixx>
-          <ixy>3.12490491e-11</ixy>
+          <ixx>1.095e-05</ixx>
+          <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>2.13765927e-05</iyy>
+          <iyy>2.138e-05</iyy>
           <iyz>0</iyz>
-          <izz>1.09513089e-05</izz>
+          <izz>1.095e-05</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.05762664 -0.06151239 -0.03470413 0 0 0</pose>
+      <pose frame=''>-0.035879 -0.06155 -0.001319 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -301,20 +301,20 @@
         </surface>
       </collision>
     </link>
-    <link name='wheel_2'>
+    <link name='link_3'>
       <inertial>
-        <mass>0.02705420</mass>
+        <mass>0.0270542</mass>
         <inertia>
-          <ixx>1.09514547e-05</ixx>
-          <ixy>3.12490491e-11</ixy>
+          <ixx>1.095e-05</ixx>
+          <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>2.13765927e-05</iyy>
+          <iyy>2.138e-05</iyy>
           <iyz>0</iyz>
-          <izz>1.09513089e-05</izz>
+          <izz>1.095e-05</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose frame=''>-0.05762664 0.06151239 -0.03470413 0 0 0</pose>
+      <pose frame=''>-0.035879 0.061475 -0.001319 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -401,9 +401,9 @@
         </surface>
       </collision>
     </link>
-    <joint name='chassis_JOINT_0' type='ball'>
-      <parent>chassis</parent>
-      <child>sphere</child>
+    <joint name='link_0_JOINT_0' type='ball'>
+      <parent>link_0</parent>
+      <child>link_1</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <physics>
         <ode>
@@ -418,9 +418,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='chassis_JOINT_1' type='revolute'>
-      <parent>chassis</parent>
-      <child>wheel_1</child>
+    <joint name='link_0_JOINT_1' type='revolute'>
+      <parent>link_0</parent>
+      <child>link_2</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -450,9 +450,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='chassis_JOINT_2' type='revolute'>
-      <parent>chassis</parent>
-      <child>wheel_2</child>
+    <joint name='link_0_JOINT_2' type='revolute'>
+      <parent>link_0</parent>
+      <child>link_3</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>

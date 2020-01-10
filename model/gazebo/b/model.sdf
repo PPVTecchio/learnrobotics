@@ -1,28 +1,30 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='learnbotics2'>
-    <link name='link_0'>
+  <model name='learnbotics_b'>
+    <link name='chassis'>
       <inertial>
-        <mass>0.326976</mass>
+        <mass>0.32697605</mass>
         <inertia>
-          <ixx>0.00063319</ixx>
+          <ixx>6.63318913e-04</ixx>
           <ixy>0</ixy>
-          <ixz>5.131e-05</ixz>
-          <iyy>0.00102937</iyy>
-          <iyz>8e-07</iyz>
-          <izz>0.00120174</izz>
+          <ixz>5.13108151e-05</ixz>
+          <iyy>1.02936619e-03</iyy>
+          <iyz>8.02098638e-07</iyz>
+          <izz>1.20173687e-03</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
       </inertial>
-      <pose frame=''>0.021748 -3.7e-05 0.033385 0 -0 0</pose>
+      <!-- <pose frame=''>0 0 0 0 0 0</pose> -->
+      <pose frame=''>0 0 0.08 0 0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
+          <!-- <uri>./../stl/modified/complete_robot.stl</uri> -->
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/complete_robot.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
@@ -36,9 +38,9 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>1 1 1 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
@@ -101,26 +103,27 @@
         </surface>
       </collision>
     </link>
-    <link name='link_1'>
+    <link name='sphere'>
       <inertial>
         <mass>0.00439458</mass>
         <inertia>
-          <ixx>1.8e-07</ixx>
-          <ixy>0</ixy>
+          <ixx>1.75495855e-07</ixx>
+          <ixy>7.17444448e-16</ixy>
           <ixz>0</ixz>
-          <iyy>1.8e-07</iyy>
+          <iyy>1.75495862e-07</iyy>
           <iyz>0</iyz>
-          <izz>1.8e-07</izz>
+          <izz>1.75398549e-07</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
       </inertial>
-      <pose frame=''>0.050011 0.000113 -0.030747 0 -0 0</pose>
+      <!-- <pose frame=''>0.02826274 0.00014962 -0.06413199 0 0 0</pose> -->
+      <pose frame=''>0.02826274 0.00014962 0.01586801 0 0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl</uri>
@@ -136,9 +139,9 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0 1 0 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
@@ -201,26 +204,27 @@
         </surface>
       </collision>
     </link>
-    <link name='link_2'>
+    <link name='wheel_red'>
       <inertial>
-        <mass>0.0270542</mass>
+        <mass>0.02705420</mass>
         <inertia>
-          <ixx>1.095e-05</ixx>
-          <ixy>0</ixy>
+          <ixx>1.09514547e-05</ixx>
+          <ixy>3.12490491e-11</ixy>
           <ixz>0</ixz>
-          <iyy>2.138e-05</iyy>
+          <iyy>2.13765927e-05</iyy>
           <iyz>0</iyz>
-          <izz>1.095e-05</izz>
+          <izz>1.09513089e-05</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
       </inertial>
-      <pose frame=''>-0.035879 -0.06155 -0.001319 1.5708 -0 0</pose>
+      <!-- <pose frame=''>-0.05762664 -0.06151239 -0.03470413 0 0 0</pose> -->
+      <pose frame=''>-0.05762664 -0.06151239 0.04529587 0 0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 -1.5708 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentro.stl</uri>
@@ -236,9 +240,9 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>1 0 0 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
@@ -247,7 +251,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 -1.5708 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentro.stl</uri>
@@ -301,26 +305,27 @@
         </surface>
       </collision>
     </link>
-    <link name='link_3'>
+    <link name='wheel_blue'>
       <inertial>
-        <mass>0.0270542</mass>
+        <mass>0.02705420</mass>
         <inertia>
-          <ixx>1.095e-05</ixx>
-          <ixy>0</ixy>
+          <ixx>1.09514547e-05</ixx>
+          <ixy>3.12490491e-11</ixy>
           <ixz>0</ixz>
-          <iyy>2.138e-05</iyy>
+          <iyy>2.13765927e-05</iyy>
           <iyz>0</iyz>
-          <izz>1.095e-05</izz>
+          <izz>1.09513089e-05</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 0 0</pose>
       </inertial>
-      <pose frame=''>-0.035879 0.061475 -0.001319 1.5708 -0 0</pose>
+      <!-- <pose frame=''>-0.05762664 0.06151239 -0.03470413 0 0 0</pose> -->
+      <pose frame=''>-0.05762664 0.06151239 0.04529587 0 0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
-        <pose frame=''>0 0 0 -1.5708 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentroEspelhada.stl</uri>
@@ -336,9 +341,9 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
+          <ambient>0 0 1 1</ambient>
+          <diffuse>0 0 1 1</diffuse>
+          <specular>0 0 1 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
@@ -347,7 +352,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 -1.5708 0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentroEspelhada.stl</uri>
@@ -401,9 +406,9 @@
         </surface>
       </collision>
     </link>
-    <joint name='link_0_JOINT_0' type='ball'>
-      <parent>link_0</parent>
-      <child>link_1</child>
+    <joint name='chassis_sphere' type='ball'>
+      <parent>chassis</parent>
+      <child>sphere</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <physics>
         <ode>
@@ -418,9 +423,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='link_0_JOINT_1' type='revolute'>
-      <parent>link_0</parent>
-      <child>link_2</child>
+    <joint name='chassis_wheel_red' type='revolute'>
+      <parent>chassis</parent>
+      <child>wheel_red</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -435,7 +440,6 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
           <damping>0</damping>
-          <friction>0</friction>
         </dynamics>
       </axis>
       <physics>
@@ -451,9 +455,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='link_0_JOINT_2' type='revolute'>
-      <parent>link_0</parent>
-      <child>link_3</child>
+    <joint name='chassis_wheel_blue' type='revolute'>
+      <parent>chassis</parent>
+      <child>wheel_blue</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -468,7 +472,6 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
           <damping>0</damping>
-          <friction>0</friction>
         </dynamics>
       </axis>
       <physics>
