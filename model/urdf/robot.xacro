@@ -281,41 +281,38 @@
     </sensor>
   </gazebo> -->
 
-
-  <!--CAMERA CRAFT-->
-  <!-- <link name="Camera">
+  <link name="camera">
 
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_diff_description/meshes/Camera.stl"/>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/Camera.stl"/>
       </geometry>
     </visual>
 
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_diff_description/meshes/Camera.stl"/>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/Camera.stl"/>
       </geometry>
     </collision>
 
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="0.002"/>
+      <mass value="0.02"/>
       <inertia ixx="1.397e-7" ixy="0" ixz="-2.070e-12" iyy="1.512e-7" iyz="1.844e-9" izz="7.943e-8"/>
     </inertial>
   </link>
 
-  <joint name="Lidar_to_Camera" type="fixed">
-    <parent link="Lidar"/>
-    <child link="Camera"/>
-    <origin rpy="0 0 -1.571" xyz="0 -0.00591798 0.03857247"/>
-  </joint> -->
+  <joint name="chassis_to_camera" type="fixed">
+    <parent link="chassis"/>
+    <child link="camera"/>
+    <origin rpy="0 0 0" xyz="0.07456502 0 0.03016464"/>
+  </joint>
 
-  <!--CAMERA SENSOR-->
-  <!-- <gazebo reference="Camera">
+  <gazebo reference="camera">
     <sensor type="camera" name="camera_top">
-      <update_rate>30.0</update_rate>
+      <update_rate>60.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
@@ -331,10 +328,10 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>diff/camera_top</cameraName>
+        <cameraName>camera_top</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>Camera</frameName>
+        <frameName>camera</frameName>
         <hackchassisline>0.07</hackchassisline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -343,7 +340,7 @@
         <distortionT2>0.0</distortionT2>
       </plugin>
     </sensor>
-  </gazebo> -->
+  </gazebo>
 
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_diff_drive.so">
