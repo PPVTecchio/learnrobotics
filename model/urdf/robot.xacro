@@ -1,0 +1,372 @@
+<?xml version="1.0" ?>
+
+<robot name="learnrobotcis" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link"></link>
+
+  <link name="chassis">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/complete_robot.stl" />
+      </geometry>
+      <material name="abs_black">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/complete_robot.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.32697605" />
+      <inertia ixx="6.63318913e-04" ixy="0" ixz="5.13108151e-05" iyy="1.02936619e-03" iyz="8.02098638e-07" izz="1.20173687e-03" />
+    </inertial>
+  </link>
+
+  <joint name="chassis_to_base_link" type="fixed">
+    <parent link="base_link" />
+    <child link="chassis" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+
+  <gazebo reference="chassis">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <link name="wheel_red">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentro.stl" />
+      </geometry>
+      <material name="abs_red">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentro.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.02705420" />
+      <inertia ixx="1.09514547e-05" ixy="3.12490491e-11" ixz="0" iyy="2.13765927e-05" iyz="0" izz="1.09513089e-05" />
+    </inertial>
+  </link>
+
+  <joint name="chassis_to_wheel_red" type="continuous">
+    <parent link="chassis" />
+    <child link="wheel_red" />
+    <origin rpy="0 0 0" xyz="-0.05762664 -0.06151239 -0.03470413" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <gazebo reference="wheel_red">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <link name="wheel_blue">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentroEspelhada.stl" />
+      </geometry>
+      <material name="abs_blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/RodaNoCentroEspelhada.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.02705420" />
+      <inertia ixx="1.09514547e-05" ixy="3.12490491e-11" ixz="0" iyy="2.13765927e-05" iyz="0" izz="1.09513089e-05" />
+    </inertial>
+  </link>
+
+  <joint name="chassis_to_wheel_blue" type="continuous">
+    <parent link="chassis" />
+    <child link="wheel_blue" />
+    <origin rpy="0 0 0" xyz="-0.05762664 0.06151239 -0.03470413" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <gazebo reference="wheel_blue">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <link name="sphere">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+      <material name="abs_green">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.00439458" />
+      <inertia ixx="1.75495855e-07" ixy="7.17444448e-16" ixz="0" iyy="1.75495862e-07" iyz="0" izz="1.75398549e-07" />
+    </inertial>
+  </link>
+
+  <joint name="chassis_to_sphere" type="continuous">
+    <parent link="chassis" />
+    <child link="sphere" />
+    <origin rpy=" 0 0 0" xyz="0.02826274 0.00014962 -0.0646" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <gazebo reference="sphere">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <link name="sphere_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+      <material name="abs_green">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1e-3" />
+      <inertia ixx="1.75495855e-07" ixy="0" ixz="0" iyy="1.75495862e-07" iyz="0" izz="1.75398549e-07" />
+    </inertial>
+  </link>
+
+  <joint name="sphere_to_sphere_2" type="continuous">
+    <parent link="sphere" />
+    <child link="sphere_2" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <gazebo reference="sphere_2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <link name="sphere_3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+      <material name="abs_green">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="file:///home/tecchio/code/catkin_learnbotics/src/learnrobotics/model/stl/modified/EsferaNoCentro.stl" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1e-3" />
+      <inertia ixx="1.75495855e-07" ixy="0" ixz="0" iyy="1.75495862e-07" iyz="0" izz="1.75398549e-07" />
+    </inertial>
+  </link>
+
+  <joint name="sphere_2_to_sphere_3" type="continuous">
+    <parent link="sphere_2" />
+    <child link="sphere_3" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+  <gazebo reference="sphere_3">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!--LIDAR CRAFT-->
+  <!-- <link name="Lidar">
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Lidar.stl"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Lidar.stl"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.031"/>
+      <inertia ixx="1.184e-5" ixy="-4.274e-11" ixz="-2.070e-12" iyy="1.206e-5" iyz="0" izz="4.594e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="chassis_to_Lidar" type="fixed">
+    <parent link="chassis"/>
+    <child link="Lidar"/>
+    <origin rpy="-1.571 1.571 0" xyz="0 0.07911977 0"/>
+  </joint> -->
+
+  <!-- RAY SENSOR CRAFT -->
+  <!-- <gazebo reference="Lidar">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>3.1415</min_angle>
+            <max_angle>6.2831</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/diff/laser/scan</topicName>
+        <frameName>Lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo> -->
+
+
+  <!--CAMERA CRAFT-->
+  <!-- <link name="Camera">
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Camera.stl"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Camera.stl"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.002"/>
+      <inertia ixx="1.397e-7" ixy="0" ixz="-2.070e-12" iyy="1.512e-7" iyz="1.844e-9" izz="7.943e-8"/>
+    </inertial>
+  </link>
+
+  <joint name="Lidar_to_Camera" type="fixed">
+    <parent link="Lidar"/>
+    <child link="Camera"/>
+    <origin rpy="0 0 -1.571" xyz="0 -0.00591798 0.03857247"/>
+  </joint> -->
+
+  <!--CAMERA SENSOR-->
+  <!-- <gazebo reference="Camera">
+    <sensor type="camera" name="camera_top">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1366</width>
+          <height>768</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>diff/camera_top</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>Camera</frameName>
+        <hackchassisline>0.07</hackchassisline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo> -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_diff_drive.so">
+      <robotNamespace>/</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
+      <alwaysOn>true</alwaysOn>
+      <legacyMode>false</legacyMode>
+      <updateRate>40</updateRate>
+      <leftJoint>chassis_to_wheel_red</leftJoint>
+      <rightJoint>chassis_to_wheel_blue</rightJoint>
+      <!-- <wheelSeparation>0.11525328</wheelSeparation> -->
+      <wheelSeparation>0.12302478</wheelSeparation>
+      <wheelDiameter>0.07554844</wheelDiameter>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <publishWheelTF>true</publishWheelTF>
+      <publishOdomTF>true</publishOdomTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+
+</robot>
