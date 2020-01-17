@@ -12,14 +12,14 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
-# add_library(velodyne_plugin SHARED src/velodyne_plugin.cpp)
-# target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_library(velodyne_plugin SHARED src/velodyne_plugin.cpp)
+target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
-add_library(velocity_control_velodyne SHARED src/velocity_control_velodyne.cpp)
-target_link_libraries(velocity_control_velodyne ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_library(control_velodyne_plugin SHARED src/velocity_control_velodyne.cpp)
+target_link_libraries(control_velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 # Build the stand-alone test program
-add_executable(vel src/vel.cpp)
+# add_executable(vel src/vel.cpp)
 
 if (${gazebo_VERSION_MAJOR} LESS 6)
   # These two
@@ -27,5 +27,5 @@ if (${gazebo_VERSION_MAJOR} LESS 6)
   find_package(Boost ${MIN_BOOST_VERSION} REQUIRED system filesystem regex)
   target_link_libraries(vel ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 else()
-  target_link_libraries(vel ${GAZEBO_LIBRARIES})
+  # target_link_libraries(vel ${GAZEBO_LIBRARIES})
 endif()

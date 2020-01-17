@@ -80,29 +80,14 @@ void VelodynePlugin::Load(physics::ModelPtr _model,
     return;
   }
 
-  // Store the model pointer for convenience.
   this->model = _model;
-
-  // Get the first joint. We are making an assumption about the model
-  // having one joint that is the rotational joint.
   this->joint = _model->GetJoints()[0];
-
-  // Setup a P-controller, with a gain of 0.1.
   this->pid = common::PID(0.1, 0, 0);
-
-  // Apply the P-controller to the joint.
   this->model->GetJointController()->SetVelocityPID(
       this->joint->GetScopedName(), this->pid);
 
-  // // Set the joint's target velocity. This target velocity is just
-  // // for demonstration purposes.
-  // this->model->GetJointController()->SetVelocityTarget(
-  //     this->joint->GetScopedName(), 10.0);
-
-  // Default to zero velocity
   double velocity = 0;
 
-  // Check that the velocity element exists, then read the value
   if (_sdf->HasElement("velocity"))
     velocity = _sdf->Get<double>("velocity");
 
