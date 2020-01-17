@@ -12,8 +12,11 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
-add_library(velodyne_plugin SHARED src/velodyne_plugin.cpp)
-target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+# add_library(velodyne_plugin SHARED src/velodyne_plugin.cpp)
+# target_link_libraries(velodyne_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+
+add_library(velocity_control_velodyne SHARED src/velocity_control_velodyne.cpp)
+target_link_libraries(velocity_control_velodyne ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 # Build the stand-alone test program
 add_executable(vel src/vel.cpp)
